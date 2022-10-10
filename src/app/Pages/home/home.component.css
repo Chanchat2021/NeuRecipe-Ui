@@ -1,0 +1,42 @@
+  .image {
+    height: 25vh;
+    width: 70vw;
+    border-radius: 15px;
+     margin-top: 10vh;
+    margin-bottom: 0.5vh; 
+    margin-left: 200px;
+  }
+  .recipe-container {
+    margin-right: 1.5vw;
+    margin-top: 1.5vw;
+    margin-bottom: 60px;
+    background-color: rgb(228, 222, 222);
+  }
+  .card-container {
+    width: 25vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-right: 1vh;
+  }
+  .btn{
+    margin-left: 1300px;
+    margin-top: -80px;
+  }
+  .header{
+    background-color:azure;
+  }
+  .display{
+    display: contents;
+  }
+  .btnText {
+    background-color: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+  }
+  .container1{
+    height: 150vh;
+    width:100vw;
+  }
+  

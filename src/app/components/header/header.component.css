@@ -1,0 +1,23 @@
+ .neuText {
+    color: #337ab7;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .button-create-recipe {
+    background-color:cornflowerblue;
+    margin-right: 10px;
+    border-color:cornflowerblue;
+    margin-top: -7px;
+  }
+  .button-create-event:hover {
+    background-color: rgb(122, 96, 172);
+  }
+  .bottom-line {
+    border-bottom: 0.75px solid rgb(184, 178, 178);
+  }
+  .text {
+    color: hsl(218, 81%, 85%);
+  }
+  .loginText {
+    letter-spacing: 1px;
+  }  

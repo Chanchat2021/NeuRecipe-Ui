@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div>
+  <div>
+    <div>
+      <img src="../../../assets/thali-1280x720.jpg" class="image" />
+    </div>
+  </div>
+  <div class="d-flex row container1">
+    <div class="recipe-container">
+      <div style="border-bottom: 1px solid rgb(212, 202, 202)">
+      </div>
+      <div class="row">
+        <div class="card-container display">
+          <div *ngFor="let recipe of recipeToDisplay" class="card-container">
+            <app-card [recipe]="recipe" (onDelete)="deleteHandler($event)"></app-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,245 @@
+<body>
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5" style="margin: 5vh">
+      <div class="card bg-dark text-white" style="border-radius: 1rem">
+        <div class="card-body p-5 text-center">
+          <form
+            [formGroup]="createRecipe"
+            (ngSubmit)="submit()"
+            style="margin-top: -5vh"
+          >
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2
+                *ngIf="receivedData.title; else showAddRecipeText"
+                class="fw-bold mb-2 text-uppercase signUpText header"
+                style="color: aliceblue"
+              >
+                Edit Recipe
+              </h2>
+
+              <ng-template #showAddRecipeText>
+                <h2
+                  class="fw-bold mb-2 text-uppercase signUpText header"
+                  style="color: aliceblue"
+                >
+                  Add Recipe
+                </h2>
+              </ng-template>
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="title">Title*</label>
+                <input
+                  type="text"
+                  id="typeTitleX"
+                  class="form-control form-control-lg"
+                  formControlName="title"
+                />
+                <p
+                  *ngIf="
+                    createRecipe.controls.title.errors &&
+                      createRecipe.controls.title.touched;
+                    else noTitleError
+                  "
+                  style="color: red"
+                >
+                  Title is required
+                </p>
+                <ng-template #noTitleError>
+                  <p></p>
+                </ng-template>
+              </div>
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="description">Description</label>
+                <textarea
+                  type="textarea"
+                  id="typeDescriptionX"
+                  class="form-control form-control-lg"
+                  formControlName="description"
+                ></textarea>
+                <div
+                  *ngIf="
+                    createRecipe.controls.description.errors &&
+                      createRecipe.controls.description.touched;
+                    else noDescriptionError
+                  "
+                  style="color: red"
+                >
+                  <p
+                    *ngIf="createRecipe.controls.description.errors?.['required']"
+                  >
+                    Description is Required
+                  </p>
+                  <p
+                    *ngIf="createRecipe.controls.description.errors?.['minlength']"
+                  >
+                    Description should be minimun 50 characters long
+                  </p>
+                </div>
+                <ng-template #noDescriptionError>
+                  <p></p>
+                </ng-template>
+              </div>
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="password">Ingredients</label>
+                <input
+                  type="textarea"
+                  id="typeIngredientsX"
+                  class="form-control form-control-lg"
+                  formControlName="ingredients"
+                />
+                <div
+                  *ngIf="
+                    createRecipe.controls.ingredients.errors &&
+                      createRecipe.controls.ingredients.touched;
+                    else noIngredientsError
+                  "
+                  style="color: red"
+                >
+                  <p
+                    *ngIf="createRecipe.controls.ingredients.errors?.['required']"
+                  >
+                    Ingredients is Required
+                  </p>
+                  <p
+                    *ngIf="createRecipe.controls.ingredients.errors?.['minlength']"
+                  >
+                    Ingredients should be minimun 10 characters long
+                  </p>
+                </div>
+                <ng-template #noIngredientsError>
+                  <p></p>
+                </ng-template>
+              </div>
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="directions">Directions</label>
+                <textarea
+                  type="textarea"
+                  id="typeDirectionsX"
+                  class="form-control form-control-lg"
+                  formControlName="directions"
+                ></textarea>
+                <div
+                  *ngIf="
+                    createRecipe.controls.directions.errors &&
+                      createRecipe.controls.directions.touched;
+                    else noDirectionsError
+                  "
+                  style="color: red"
+                >
+                  <p
+                    *ngIf="createRecipe.controls.directions.errors?.['required']"
+                  >
+                    Directions is Required
+                  </p>
+                  <p
+                    *ngIf="createRecipe.controls.directions.errors?.['minlength']"
+                  >
+                    Directions should be minimun 50 characters long
+                  </p>
+                </div>
+                <ng-template #noDirectionsError>
+                  <p></p>
+                </ng-template>
+              </div>
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="recipeTips">Recipe Tips</label>
+                <input
+                  type="textarea"
+                  id="typeTipsX"
+                  class="form-control form-control-lg"
+                  formControlName="recipeTips"
+                />
+                <div
+                  *ngIf="
+                    createRecipe.controls.recipeTips.errors &&
+                      createRecipe.controls.recipeTips.touched;
+                    else noTipsError
+                  "
+                  style="color: red"
+                >
+                  <p
+                    *ngIf="createRecipe.controls.recipeTips.errors?.['required']"
+                  >
+                    Tips is Required
+                  </p>
+                  <p
+                    *ngIf="createRecipe.controls.recipeTips.errors?.['minlength']"
+                  >
+                    Tips should be minimun 10 characters long
+                  </p>
+                </div>
+                <ng-template #noTipsError>
+                  <p></p>
+                </ng-template>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="nutritionFacts"
+                  >Nutrition Facts</label
+                >
+                <input
+                  type="textarea"
+                  id="typeFactsX"
+                  class="form-control form-control-lg"
+                  formControlName="nutritionFacts"
+                />
+                <div
+                  *ngIf="
+                    createRecipe.controls.nutritionFacts.errors &&
+                      createRecipe.controls.nutritionFacts.touched;
+                    else noFactsError
+                  "
+                  style="color: red"
+                >
+                  <p
+                    *ngIf="createRecipe.controls.nutritionFacts.errors?.['required']"
+                  >
+                    Nutrition Fact is Required
+                  </p>
+                  <p
+                    *ngIf="createRecipe.controls.nutritionFacts.errors?.['minlength']"
+                  >
+                    Nutrition Fact should be minimun 10 characters long
+                  </p>
+                </div>
+                <ng-template #noFactsError>
+                  <p></p>
+                </ng-template>
+                <div
+                  class="form-outline form-white mb-4"
+                  style="margin-left: 15%"
+                >
+                  <label for="image">Upload Image</label>
+                  <input
+                    type="file"
+                    class="form-control-file"
+                    id="image"
+                    (change)="onSelect($event)"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-outline-light btn-lg px-5"
+                [disabled]="!createRecipe.valid"
+                *ngIf="receivedData.title; else showAddRecipeButton"
+              >
+                Edit Recipe
+              </button>
+
+              <ng-template #showAddRecipeButton>
+                <button
+                  type="submit"
+                  class="btn btn-outline-light btn-lg px-5"
+                  [disabled]="!createRecipe.valid"
+                >
+                  Add Recipe
+                </button>
+              </ng-template>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

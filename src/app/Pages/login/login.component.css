@@ -1,0 +1,5 @@
+.gradient-custom {
+    background: #c2bbc9;
+    background: -webkit-linear-gradient(to right, rgb(194, 186, 202), rgb(192, 198, 208));
+    background: linear-gradient(to right, rgb(195, 187, 205), rgb(186, 193, 205))
+    }

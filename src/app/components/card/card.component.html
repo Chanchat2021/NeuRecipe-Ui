@@ -1,0 +1,31 @@
+<div class="card">
+  <div>
+    <img
+      class="img"
+      src="data:image/png;base64,{{ image }}"
+      *ngIf="image != null"
+    />
+    <div class="card-body">
+      <h5 class="card-title recipeName">{{ recipe.title }}{{ " Recipe " }}</h5>
+      <p class="card-text description">
+        {{ recipe.description | slice: 0:300 }}
+      </p>
+      <button
+        class="deleteButton"
+        (click)="delete()"
+        type="button"
+        [disabled]="!isActive"
+      >
+        Delete
+      </button>
+      <button
+        class="editButton"
+        (click)="edit()"
+        type="button"
+        [disabled]="!isActive"
+      >
+        Edit
+      </button>
+    </div>
+  </div>
+</div>

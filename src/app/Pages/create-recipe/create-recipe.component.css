@@ -1,0 +1,58 @@
+.header-Text{
+    font-size: bold;
+}
+.bannerButton{
+    height: 1rem;
+    width: 3rem;
+    background: transparent;
+    border: 0;
+}
+.container-fluid{
+    background-color: rgb(255,247,217);
+    height: 24vh;
+    width:95vw;
+    margin-top:5vh;
+    border-radius: 1vw;
+}
+.header-Text{
+    position: absolute;
+    top:150px;
+    left: 80px;
+
+}
+.header-Img{
+    height: 150px;
+    position: absolute;
+    top: 75px;
+    right: .08px;
+    max-width:100%;
+    
+}
+.form{
+    padding-left: 20rem;
+    width: 60rem;
+    justify-content: center;
+    height: 21px;
+    font-size: 15px;
+    margin-top:8vh;
+}
+.container{
+    background-color: antiquewhite;
+    color:black;
+    font-weight: bold;
+}
+.header{
+    text-align: center;
+    color:black;
+}
+body{
+    background-image: url('../../../assets/wooden-spoon-condiments-background-wallpaper-preview.jpg');
+    height: auto;
+    width:100vw;
+
+}
+.gradient-custom {
+    background: #c2bbc9;
+    background: -webkit-linear-gradient(to right, rgb(194, 186, 202), rgb(192, 198, 208));
+    background: linear-gradient(to right, rgb(195, 187, 205), rgb(186, 193, 205))
+    }

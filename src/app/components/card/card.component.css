@@ -1,0 +1,50 @@
+.recipeName {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 25px;
+  margin-top: -10px;
+}
+.description {
+  font-size: 12px;
+  margin-left: 25px;
+  margin-top: -10px;
+  margin-bottom: -25px;
+}
+.card {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  width: auto;
+  height: 340px;
+  overflow: clip;
+  margin: 5px;
+  margin-left: 40px;
+}
+.card-body {
+  position: relative;
+  margin-top: 10px;
+}
+.img {
+  height: 10rem;
+  width: 100%;
+  border-radius: 5px;
+}
+.deleteButton{
+  width: 20%;
+  height: 30px;
+  color: white;
+  background-color:cornflowerblue;
+  border: none;
+  border-radius: 8px;
+  float: left;
+  margin-top: 35px;
+  margin-left: 80px;
+}
+.editButton{
+  width: 20%;
+  height: 30px;
+  color: white;
+  background-color:cornflowerblue;
+  border: none;
+  margin-top: 35px;
+  margin-left: 10px;
+  border-radius: 8px;
+}

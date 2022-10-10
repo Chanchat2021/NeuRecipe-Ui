@@ -1,0 +1,134 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem">
+          <div class="card-body p-5 text-center">
+            <form [formGroup]="signupForm" (ngSubmit)="submit()">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase signUpText">Sign up</h2>
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="email">Name</label>
+                  <input
+                    type="text"
+                    id="typeNameX"
+                    class="form-control form-control-lg"
+                    formControlName="name"
+                  />
+                  <p
+                    *ngIf="
+                      signupForm.controls.name.errors &&
+                        signupForm.controls.name.touched;
+                      else noNameError
+                    "
+                    style="color: red"
+                  >
+                    Name must be minimum 5 characters long
+                  </p>
+                  <ng-template #noNameError>
+                    <p></p>
+                  </ng-template>
+                </div>
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="email">Email</label>
+                  <input
+                    type="text"
+                    id="typeEmailX"
+                    class="form-control form-control-lg"
+                    formControlName="email"
+                  />
+                  <div
+                    *ngIf="
+                      signupForm.controls.email.errors &&
+                        signupForm.controls.email.touched;
+                      else noEmailError
+                    "
+                    style="color: red"
+                  >
+                    <p *ngIf="signupForm.controls.email.errors?.['required']">
+                      Email is Required
+                    </p>
+                    <p *ngIf="signupForm.controls.email.errors?.['email']">
+                      Invalid Email
+                    </p>
+                  </div>
+                  <ng-template #noEmailError>
+                    <p></p>
+                  </ng-template>
+                </div>
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="password">Password</label>
+                  <input
+                    type="password"
+                    id="typePasswordX"
+                    class="form-control form-control-lg"
+                    formControlName="password"
+                  />
+                  <div
+                    *ngIf="
+                      signupForm.controls.password.errors &&
+                        signupForm.controls.password.touched;
+                      else noPasswordError
+                    "
+                    style="color: red"
+                  >
+                    <p
+                      *ngIf="signupForm.controls.password.errors?.['required']"
+                    >
+                      Password is Required
+                    </p>
+                    <p
+                      *ngIf="signupForm.controls.password.errors?.['minlength']"
+                    >
+                      Password should be between 5 to 15 characters
+                    </p>
+                  </div>
+                  <ng-template #noPasswordError>
+                    <p></p>
+                  </ng-template>
+                </div>
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="password"
+                    >Confirm Password</label
+                  >
+                  <input
+                    type="password"
+                    id="typeConfirmPasswordX"
+                    class="form-control form-control-lg"
+                    formControlName="confirmpassword"
+                  />
+                  <p
+                    *ngIf="
+                      signupForm.controls.confirmpassword.errors &&
+                        signupForm.controls.confirmpassword.touched;
+                      else noConfirmPasswordError
+                    "
+                    style="color: red"
+                  >
+                    Password must be same
+                  </p>
+                  <ng-template #noConfirmPasswordError>
+                    <p></p>
+                  </ng-template>
+                </div>
+                <button
+                  class="btn btn-outline-light btn-lg px-5"
+                  type="submit"
+                  [disabled]="!signupForm.valid"
+                >
+                  Register
+                </button>
+              </div>
+              <div class="text">
+                <p class="mb-0">
+                  Already have an account?
+                  <a href="/login" class="text-white-50 fw-bold">Login</a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
